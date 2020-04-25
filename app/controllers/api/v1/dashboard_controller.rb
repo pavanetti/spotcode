@@ -3,6 +3,7 @@
 class Api::V1::DashboardController < ApplicationController
   def index
     load_recent_heard
+    load_recommendations
   end
 
   private
@@ -16,9 +17,9 @@ class Api::V1::DashboardController < ApplicationController
 
   def load_recommendations
     heard_categories = @recent_albums.map(&:category)
-    @recommend_albuns =
+    @recommend_albums =
       if heard_categories.present?
-        Album.joins(:category, :song)
+        Album.joins(:category, :songs)
              .where(category: heard_categories)
              .order('songs.played_count')
              .select('distinct albums.*')
