@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_163137) do
+ActiveRecord::Schema.define(version: 2020_04_25_011222) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -66,6 +66,15 @@ ActiveRecord::Schema.define(version: 2020_04_24_163137) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "recently_heards", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "album_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["album_id"], name: "index_recently_heards_on_album_id"
+    t.index ["user_id"], name: "index_recently_heards_on_user_id"
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string "title"
     t.integer "played_count", default: 0
@@ -92,5 +101,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_163137) do
   add_foreign_key "albums", "artists"
   add_foreign_key "albums", "categories"
   add_foreign_key "favorites", "users"
+  add_foreign_key "recently_heards", "albums"
+  add_foreign_key "recently_heards", "users"
   add_foreign_key "songs", "albums"
 end

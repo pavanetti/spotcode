@@ -10,7 +10,7 @@ class Api::V1::DashboardController < ApplicationController
   def load_recent_heard
     @recent_albums =
       current_user
-      .recently_heard.order(created_at: :desc)
+      .recently_heards.order(created_at: :desc)
       .limit(4).map(&:album)
   end
 
