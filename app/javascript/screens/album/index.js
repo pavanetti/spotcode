@@ -1,9 +1,15 @@
 import React from "react";
+import NavbarFooter from "components/common/navbar-footer";
+import SectionWrapper from "components/common/section-wrapper";
+import Albums from "components/albums";
 
 const AlbumScreen = () => {
   return (
     <>
-      <div>AlbumScreen</div>
+      <SectionWrapper>
+        <Albums />
+        <NavbarFooter />
+      </SectionWrapper>
     </>
   );
 };

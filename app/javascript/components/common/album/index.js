@@ -9,7 +9,7 @@ const DivVSpaced = styled.div`
 
 const Album = ({ id, cover_url, title, artist_name }) => {
   return (
-    <Link to={`/albums/${id}`}>
+    <Link to={`/album/${id}`}>
       <Image src={cover_url} />
       <DivVSpaced>
         <Heading size={6} className="has-text-white">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Columns, Heading } from "react-bulma-components";
 import AlbumsService from "services/albums";
-import Album from "../album";
+import Album from "../common/album";
 
 const DivVSpaced = styled.div`
   margin-top: 50px;
