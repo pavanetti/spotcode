@@ -1,10 +1,14 @@
 import React from "react";
+import Discovery from "components/discovery";
 import NavbarFooter from "components/common/navbar-footer";
+import SectionWrapper from "components/common/section-wrapper";
 
 const DiscoveryScreen = () => {
   return (
     <>
-      <div>DiscoveryScreen</div>
+      <SectionWrapper>
+        <Discovery />
+      </SectionWrapper>
       <NavbarFooter />
     </>
   );
